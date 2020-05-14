@@ -15,21 +15,6 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const firestore = new firebase.firestore();
 
-// const resources = {
-//   auth: firebase.auth(),
-//   provider: new firebase.auth.GoogleAuthProvider(),
-//   database: firebase.firestore(),
-//   storage: firebase.storage(),
-// };
-// const storageModule = {
-//   upload: async (path, file) => await resources.storage.ref(path).put(file),
-//   getUrl: async (path) => await resources.storage.ref(path).getDownloadURL()
-// };
-// const dataModule = {
-//   addOneTodo: async (todoItem)=>{
-//     await resources.database.collection('todo').set(todoItem);
-//   }
-// }
 export {firestore};
 
 
