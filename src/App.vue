@@ -1,42 +1,32 @@
 <template>
   <div id="app">
-    <todo-header></todo-header>
-    <todo-input></todo-input>
-    <todo-list></todo-list>
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view/>
   </div>
 </template>
 
-<script>
-  import TodoHeader from "./components/TodoHeader";
-  import TodoInput from "./components/TodoInput";
-  import TodoList from "./components/TodoList";
-
-  export default {
-    components: {
-      //컴포넌트 태그명 : 컴포넌트 내용
-      TodoHeader,
-      TodoInput,
-      TodoList
-    }
-  }
-</script>
-
 <style>
-  body {
-    text-align: center;
-    background-color: beige;
-  }
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 
-  input {
-    border-style: groove;
-    width: 200px;
-  }
+#nav {
+  padding: 30px;
+}
 
-  button {
-    border-style: groove;
-  }
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
 
-  .shadow {
-    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.03);
-  }
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
 </style>
