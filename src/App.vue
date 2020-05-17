@@ -1,32 +1,74 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Todo</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+    <v-app>
+        <v-toolbar
+                color="purple lighten-2"
+                dark
+                app>
+            <v-toolbar-title>
+                <router-link to="/">Todo & Note</router-link>
+            </v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-toolbar-items>
+                <v-btn
+                        to="/todo"
+                        flat
+                >Todo
+                </v-btn>
+            </v-toolbar-items>
+            <v-toolbar-items>
+                <v-btn
+                        v-if="logged"
+                        @click="loggedOut()"
+                        flat
+                >로그아웃
+                </v-btn>
+            </v-toolbar-items>
+        </v-toolbar>
+        <router-view></router-view>
+    </v-app>
 </template>
 
+<script>
+    import {fireApp} from './firebase';
+
+    const auth = fireApp.auth();
+
+    export default {
+        name: 'app',
+        data: () => ({
+            logged: false,
+        }),
+        mounted() {
+            this.$root.$on('USER_LOGGED', (payload) => {
+                this.logged = payload
+            });
+        },
+        methods: {
+            loggedOut() {
+                auth.signOut()
+                    .then(() => {
+                        this.$router.push('/login');
+                        this.logged = false;
+                    })
+                    .catch((error) => {
+                        // eslint-disable-next-line
+                        console.log('error', error)
+                    })
+                ;
+            },
+        }
+    }
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+    #app {
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+    a, a:visited {
+        text-decoration: none;
+        color: white;
+    }
 </style>

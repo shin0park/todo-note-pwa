@@ -1,20 +1,16 @@
-import firebase from 'firebase/app'
-import 'firebase/firestore'
+import firebase from 'firebase/app';
+import 'firebase/database';
+import 'firebase/auth';
 
 var firebaseConfig = {
-  apiKey: 'AIzaSyCFpn4KWALe5om3Z-wSLp92zXVlRgr8FWU',
-  authDomain: 'todo-vue-pwa-a910f.firebaseapp.com',
-  databaseURL: 'https://todo-vue-pwa-a910f.firebaseio.com',
-  projectId: 'todo-vue-pwa-a910f',
-  storageBucket: 'todo-vue-pwa-a910f.appspot.com',
-  messagingSenderId: '22789479981',
-  appId: '1:22789479981:web:34622040821f0cb36f22a4',
-  measurementId: 'G-C7M6ESVKD0'
-}
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig)
-const firestore = new firebase.firestore()
+  apiKey: "AIzaSyAUt_82ENXQHh5uO8RTUGy2TxScf4dtfpc",
+  authDomain: "vue-note-todo.firebaseapp.com",
+  databaseURL: "https://vue-note-todo.firebaseio.com",
+  projectId: "vue-note-todo",
+  storageBucket: "vue-note-todo.appspot.com",
+  messagingSenderId: "62624975552",
+  appId: "1:62624975552:web:96f66540c32d1fb9dd7b25",
+  measurementId: "G-3XCE7YKFR9"
+};
 
-export { firestore }
-
-
+export const fireApp = firebase.initializeApp(firebaseConfig);

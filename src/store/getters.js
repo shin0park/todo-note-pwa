@@ -1,4 +1,7 @@
 const storedTodoItems = (state) => {
   return state.todoItems
 }
-export { storedTodoItems }
+const loginedUser = (state) => {
+  return state.user
+}
+export { storedTodoItems ,loginedUser}
