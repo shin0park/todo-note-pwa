@@ -17,6 +17,13 @@
             </v-toolbar-items>
             <v-toolbar-items>
                 <v-btn
+                        to="/dashboard"
+                        flat
+                >Note
+                </v-btn>
+            </v-toolbar-items>
+            <v-toolbar-items>
+                <v-btn
                         v-if="logged"
                         @click="loggedOut()"
                         flat
