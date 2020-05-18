@@ -57,7 +57,7 @@ export default {
     .then(
       (user) => {
         this.user = user;
-          console.log('5');
+        console.log('5');
         this.$store.commit('setUser',{ user : this.user });
         console.log(user);
         console.log(user.uid);

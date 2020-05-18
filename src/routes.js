@@ -1,6 +1,6 @@
 import Todo from './components/Todo'
 import Login from './components/Login'
-const Dashboard = () => import('./components/Dashboard')
+import Dashboard from './components/Dashboard'
 
 export const routes = [
   {path: '', component: Login},
