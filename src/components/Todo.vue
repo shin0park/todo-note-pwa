@@ -8,9 +8,7 @@
 <script>
     import TodoHeader from '../components/TodoHeader'
     import TodoList from '../components/TodoList'
-    import {fireApp} from '../firebase.js'
 
-    const auth = fireApp.auth();
     export default {
         name: 'Todo',
         components: {

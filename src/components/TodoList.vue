@@ -42,9 +42,7 @@
                 .then(
                     (user) => {
                         this.user = user;
-                        console.log('6');
                         this.$store.commit('setUser', {user: user});
-                        console.log('7');
                         this.$root.$emit('USER_LOGGED', true);
                         this.initialize()
                     }
@@ -73,11 +71,8 @@
                 );
             },
             async addTodoItem() {
-                console.log(this.newTodoItem)
                 if (this.newTodoItem !== '') {
                     const text = this.newTodoItem.trim()
-                    console.log('addTodoItem')
-                    console.log(this.user)
                     await this.$store.dispatch('addOneItem', text)
                     await this.$store.dispatch('getTasks')
                     this.clearInput()

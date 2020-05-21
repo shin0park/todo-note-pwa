@@ -110,7 +110,6 @@
             auth.onAuthStateChanged(function (user) {
               if (user) {
                 this.user = user
-                //this.$store.commit('setUser',{ user : this.user });
                 resolve(user)
               } else {
                 reject(user)
@@ -144,7 +143,6 @@
             }
           )
           .catch(
-            // eslint-disable-next-line
             (error) => {
               console.log('Something happened.', error)
             }
@@ -153,14 +151,12 @@
       signUpUser (email, password) {
         auth.createUserWithEmailAndPassword(email, password)
           .then(
-            // eslint-disable-next-line
             (user) => {
               console.log('User registered.', user)
               this.goToLogin()
             }
           )
           .catch(
-            // eslint-disable-next-line
             (error) => {
               console.log('Something happened.', error)
             }

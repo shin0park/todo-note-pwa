@@ -57,10 +57,7 @@ export default {
     .then(
       (user) => {
         this.user = user;
-        console.log('5');
         this.$store.commit('setUser',{ user : this.user });
-        console.log(user);
-        console.log(user.uid);
         this.$root.$emit('USER_LOGGED',true);
         this.getUserNotes();
       }
@@ -82,8 +79,6 @@ export default {
         content: this.newContent,
         userId: this.user.uid
       };
-      console.log('saveNote')
-      console.log(typeof this.newTitle)
       this.pages.push(newItem);
       this.index = this.pages.length - 1;
       db.push(newItem);
@@ -108,7 +103,6 @@ export default {
       )
       .catch(
         (error) => {
-          // eslint-disable-next-line
           console.log('something wrong happened!', error);
         }
       )
