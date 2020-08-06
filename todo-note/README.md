@@ -26,10 +26,10 @@ url: https://vue-note-todo.firebaseapp.com
 - firebase
 
 ---
-### 개발 과정
-- vuex로 spa를 구현하는 방법을 공부하여 front를 구현하는데 시간 소요.
-- dashboard.vue 는 vuex를 사용하지 않고, todo.vue 는 vuex를 사용하여 개발함으로써 vuex의 필요성에 대해 배움. 
-- pwa 기술 이론 공부와 vue-cli를 통한 pwa 적용 방법에 대해 공부하는데 대부분의 시간을 소요
+### 개발 과정 (네이버 핵데이 기간: 대략 1주일)
+- vuex로 SPA를 구현하는 방법을 공부한 이후 front를 구현하였기에 시간 소요.
+- dashboard.vue 는 vuex를 사용하지 않고, todo.vue 는 vuex를 사용하여 개발함으로써 vuex의 필요성에 대해 배우고자 함. 
+- PWA에 대한 이론 공부와 vue-cli를 통한 PWA 적용 방법을 습득하는데에 대부분의 시간을 소요
 
 ### 데모 사진
 ![pwa1](https://user-images.githubusercontent.com/38244852/82762719-8df41a00-9e3d-11ea-9db6-8d23623559d8.jpg)
@@ -38,7 +38,7 @@ url: https://vue-note-todo.firebaseapp.com
 
 
 ## 앞으로 추가할 기능
-- 등록한 일에 대한 알림 (push notification) (리서치 필요)
+- 등록한 일에 대한 알림 (push notification) - ios에서는 동작X. (리서치 필요)
 
 ### 참고자료
 - [vuex](https://vuex.vuejs.org/kr/guide/)
